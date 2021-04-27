@@ -1,7 +1,7 @@
 //mahiyah muthu
 //4.25.21
-//red ghost 
 
+//red ghost 
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.ImageIcon;

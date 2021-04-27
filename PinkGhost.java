@@ -7,7 +7,7 @@ import java.awt.event.ActionEvent;
 import javax.swing.ImageIcon;
 import javax.swing.Timer;
 
-public class PinkGhost extends Ghost 
+public class PinkGhost extends GhostDriver 
 {
 
    /*****************************************************

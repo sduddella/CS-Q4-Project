@@ -12,7 +12,7 @@ import javax.swing.Timer;
 ********************************/
 
 
-public class BlueGhost extends Ghost 
+public class BlueGhost extends GhostDriver 
 {
    
    /*****************************************************

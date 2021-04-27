@@ -1,8 +1,8 @@
-//mahiyah muthu and demi tudorache
+//mahiyah muthu AND demi tudorache
 //4.25.21
 
 /****************************************
-* this crates the pac man character class
+* this creates the pac man character class
 *****************************************/
 
 import java.awt.event.ActionEvent;
