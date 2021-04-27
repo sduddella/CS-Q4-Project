@@ -7,7 +7,7 @@ import java.awt.event.ActionEvent;
 import javax.swing.ImageIcon;
 import javax.swing.Timer;
 
-public class RedGhost extends Ghost 
+public class RedGhost extends GhostDriver 
 {
    public RedGhost(double startX, double startY)
    {
