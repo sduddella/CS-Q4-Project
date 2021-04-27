@@ -5,7 +5,15 @@ import java.util.Random;
 
 public class GhostDriver extends Character
 {
-   //startProcess variable will control the start of the ghost behavior
+
+   /*****************************************************
+   * creates a new file for the MAIN ghost driver file
+   * startProcess var will control the start of the ghost behavior
+   * @param 
+   *   startX  intial start x distanc 
+   * @param 
+   *   startY  intial start y distance
+   ******************************************************/
    public GhostDriver(double startX, double startY)
    {
       super(startX, startY);
@@ -13,6 +21,7 @@ public class GhostDriver extends Character
       
    }
    
+   /**method to move the pacman, but if it is eating, restart board*/
    public void move()
    {
       Random.move();
@@ -21,11 +30,21 @@ public class GhostDriver extends Character
    repaint();
    }
    
-   private boolean eatPacMan()
-   {
-      //use math to create a formula for ghosts to eat the pac man
-   }
+   /**method for ghosts to eat pacman*/
+   private boolean eatPacMan(){}
    
+   
+   /*****************************************************
+   * method for setting the direction for ghosts
+   * @param 
+   *   aX   
+   * @param 
+   *   aY
+   * @param
+   *   bX
+   * @param
+   *   bY  
+   ******************************************************/
    private void setDirection(int aX, int aY, int bX, int bY)
    {
       //based on int values...
@@ -33,19 +52,18 @@ public class GhostDriver extends Character
          //turn right  
          //turn up 
          //turn down     
-         
-      super.move();
    }
    
+  
+   /**method for setting values and movement*/
    private void randomMove()
    {
       //set values from turn methods to correct x and y coordinates in game board
-      //return values
+      //MAKE SURE TO return values
    }
    
-   public void stopTimer()
-   {
-      super.stopTimer();
-   }
+   /**method for timer to stop*/
+   public void stopTimer(){}
+   
 }
   

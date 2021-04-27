@@ -7,8 +7,17 @@ import java.awt.event.ActionEvent;
 import javax.swing.ImageIcon;
 import javax.swing.Timer;
 
-public class OrangeGhost extends GhostDriver 
+public class OrangeGhost extends Ghost 
 {
+
+   /*****************************************************
+   * creates a new file for the orange ghost
+   * @param 
+   *   startX  intial start x distanc 
+   * @param 
+   *   startY  intial start y distance
+   ******************************************************/
+   
    public OrangeGhost(double startX, double startY)
    {
       super(startX, startY);

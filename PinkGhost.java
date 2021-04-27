@@ -7,8 +7,17 @@ import java.awt.event.ActionEvent;
 import javax.swing.ImageIcon;
 import javax.swing.Timer;
 
-public class PinkGhost extends GhostDriver 
+public class PinkGhost extends Ghost 
 {
+
+   /*****************************************************
+   * creates a new file for the pink ghost
+   * @param 
+   *   startX  intial start x distanc 
+   * @param 
+   *   startY  intial start y distance
+   ******************************************************/ 
+   
    public PinkGhost(double startX, double startY)
    {
       super(startX, startY);

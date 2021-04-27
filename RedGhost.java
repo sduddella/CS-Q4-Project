@@ -15,12 +15,12 @@ public class RedGhost extends GhostDriver
 {
    
    /*****************************************************
-      * creates a new file for the red ghost
-      * @param 
-      *   startX  intial start x distanc 
-      * @param 
-      *   startY  intial start y distance
-      ******************************************************/
+   * creates a new file for the red ghost
+   * @param 
+   *   startX  intial start x distanc 
+   * @param 
+   *   startY  intial start y distance
+   ******************************************************/
 
    public RedGhost(double startX, double startY)
    {      
