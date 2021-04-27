@@ -1,16 +1,29 @@
 //mahiyah muthu
 //4.25.21
-
 //red ghost 
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.ImageIcon;
 import javax.swing.Timer;
 
+/********************************
+* this the file for the red ghost 
+********************************/
+
 public class RedGhost extends GhostDriver 
 {
+   
+   /*****************************************************
+      * creates a new file for the red ghost
+      * @param 
+      *   startX  intial start x distanc 
+      * @param 
+      *   startY  intial start y distance
+      ******************************************************/
+
    public RedGhost(double startX, double startY)
-   {
+   {      
       super(startX, startY);
       
       //retrieve blue ghost image from file directory

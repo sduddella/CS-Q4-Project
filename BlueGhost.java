@@ -7,10 +7,24 @@ import java.awt.event.ActionEvent;
 import javax.swing.ImageIcon;
 import javax.swing.Timer;
 
-public class BlueGhost extends GhostDriver 
+/********************************
+* this the file for the blue ghost 
+********************************/
+
+
+public class BlueGhost extends Ghost 
 {
+   
+   /*****************************************************
+      * creates a new file for the blue ghost
+      * @param 
+      *   startX  intial start x distanc 
+      * @param 
+      *   startY  intial start y distance
+      ******************************************************/
+      
    public BlueGhost(double startX, double startY)
-   {
+   {  
       super(startX, startY);
       
       //retrieve blue ghost right image from file directory
