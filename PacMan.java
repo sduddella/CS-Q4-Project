@@ -94,7 +94,10 @@ public class PacMan extends Character implements KeyListener
    		//set move y = 0 (inital direction of pacman)
 	   }
       
-      
+      /** method that programs keyboard functionality
+      * @param e
+      *  identifies a key event
+      */
       public void keyPressed(KeyEvent e) 
       {
    		// if code == left
