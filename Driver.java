@@ -28,6 +28,10 @@ public class Driver extends JFrame{
    
    /**
    *Main function that creates new board
+   *@param args
+   *  takes array of String arguments
+   *@throws Throwable
+   *  declares Throwable exception
    */
-   public static void main(String args) throws Throwable{}
+   public static void main(String args[]) throws Throwable{}
 }

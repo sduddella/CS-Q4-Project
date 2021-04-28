@@ -16,10 +16,10 @@ public class RedGhost extends GhostDriver
    
    /*****************************************************
    * creates a new file for the red ghost
-   * @param 
-   *   startX  intial start x distanc 
-   * @param 
-   *   startY  intial start y distance
+   * @param startX  
+   *  intial start x distance 
+   * @param startY  
+   *  intial start y distance
    ******************************************************/
 
    public RedGhost(double startX, double startY)

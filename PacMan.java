@@ -1,4 +1,4 @@
-//mahiyah muthu AND demi tudorache
+//mahiyah muthu, demi tudorache, and siri duddella
 //4.25.21
 
 /****************************************
@@ -12,14 +12,16 @@ import java.awt.event.KeyListener;
 import javax.swing.ImageIcon;
 import javax.swing.Timer;
 
+
+/**this is the pacman file and contains all the settings required for the main character*/
 public class PacMan extends Character implements KeyListener
 {
    /*****************************************************
     * creates a new file for the pac man character
-    * @param 
-    *   startX  intial start x distanc 
-    * @param 
-    *   startY  intial start y distance
+    * @param startX  
+    *    intial start x distance 
+    * @param startY  
+    *    intial start y distance
     ******************************************************/
     
    public PacMan(double startX, double startY)

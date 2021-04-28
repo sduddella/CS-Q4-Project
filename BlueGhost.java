@@ -10,18 +10,16 @@ import javax.swing.Timer;
 /********************************
 * this the file for the blue ghost 
 ********************************/
-
-
 public class BlueGhost extends GhostDriver 
 {
    
    /*****************************************************
-      * creates a new file for the blue ghost
-      * @param 
-      *   startX  intial start x distanc 
-      * @param 
-      *   startY  intial start y distance
-      ******************************************************/
+   * creates a new file for the blue ghost
+   * @param startX  
+   *  intial start x distance 
+   * @param startY  
+   *  intial start y distance
+   ******************************************************/
       
    public BlueGhost(double startX, double startY)
    {  

@@ -10,7 +10,7 @@ import java.util.Random;
 import javax.swing.Timer;
 
 
-
+/** this class sets the basic properties of each character, as well as their default states */
 public class Character extends JPanel
 {
 	/**creates a protected double var x*/
@@ -34,6 +34,7 @@ public class Character extends JPanel
    /**creates a protected image icon method*/
 	protected ImageIcon image;
    
+   /**creates a Board*/
 	Board board;
    
    /**creates a double var pacX*/
@@ -45,43 +46,60 @@ public class Character extends JPanel
    /**creates a protected timer method*/
 	protected Timer timer;
    
-  
+  /** constructor sets the default values of each character including the starting position and image 
+  * @param startX
+  *   defines the x coordinate of starting point
+  * @param startY
+  *   defines the y coordinate of starting point
+  */
   public Character(double startX, double startY){}
 
-  
+  /** method that paints icons to maze 
+  * @param g
+  *   graphics object used to pian icons
+  */
   public void paint(Graphics g){}
 
-
-  protected ImageIcon leftIcone(){}
+  /**creates null icon if needed*/
+  protected ImageIcon leftIcon(){}
 		
-	
+  /**sets up board with characters
+  * @param b
+  *   takes in board that we are currently working on as an object
+  */
   public void setBoard(Board b){}
 	
-   	
+  /**sets default move functionality*/ 	
   public void move(){}
 
-
+  /**identifies if characters are going out of the board range*/
   private boolean outOfRange(){}
 				
-
+  /**check position of character relative to borders*/
   private boolean warmAll(double Xi, double Yi){}
   
-		
-  public void setHeroLoc(double X, double Y){}
+  /** set default location of pacman */	
+  public void setPacLoc(double X, double Y){}
   
-  
+  /** get pacman x coordinate */
   public double getPacX(){}
   
-   
+  /** get pacman y coordinate */ 
   public double getPacY(){}
   
-  
+  /* set starting point
+  * @param d
+  *   x coordinate value
+  * @param e
+  *   y coordinate value
+  */
   public void startingPoint(double d, double e){}
   
-   
+  /** method stops Timer */ 
   public void stopTimer(){}
   
-  
+  /** method starts Timer*/
   public void startTimer(){}
    
+}
 

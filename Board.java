@@ -16,38 +16,54 @@ import javax.swing.JLayeredPane;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
+/**makes board and sets functions for tracking information on board*/
 public class Board extends JPanel {
-
+   
    /** creates a serialized object to keep track of users */
-   private static final long serialVersionUID = 1L;
+   private static final long serialVersionUID = 1L; 
+   
    /** creates an object of PacMan named "pacman" */
    private PacMan pacman;
+   
    /** instantiates Driver object game */
    Driver game;
+   
    /** array of ghosts */
    private GhostDriver[] ghosts;
+   
    /** instantiates background and food panels*/
    private JPanel background, foodBoard;
+   
    /** instantiates multiboard Layered Pane*/
    private JLayeredPane multiboard;
+   
    /** integers that track map height and width **/
    private int mapHeight, mapWidth;
+   
    /** doubles that track square height and width for icon scaling */
    private double sqHeight, sqWidth;
+   
    /** tracks score */
    int score;
+   
    /** status bar panel */
    JPanel panel;
+   
    /** game label */
    JLabel pacmanGame;
+   
    /** int that tracks number of lives left */
    int lives;
-   /* Wall location tracker */
+   
+   /** Wall location tracker */
    final int W=1;
-   /* Food location tracker */
+   
+   /** Food location tracker */
    final int F=2;
-   /* Empty location tracker */
+   
+   /** Empty location tracker */
    final int E=3;
+   
    /** array that sets up board */
    private int board[][];
    
@@ -82,10 +98,12 @@ public class Board extends JPanel {
    */
    public GhostDriver ghostPos(int pos){}
    
-   /** Constructor - map width */
+   /** Constructor - map width
+   * @return mapWidth */
    public int getMapWidth(){}
    
-   /** Constructor - map height */
+   /** Constructor - map height
+   * @return mapHeight */
    public int getMapHeight(){}
    
    /** Constructor - toString */
@@ -104,6 +122,7 @@ public class Board extends JPanel {
    *  first index on board position
    * @param j
    *  second index on board position
+   * @return board[i][j] is not a wall
    */
    public boolean isClear(int i, int j){}
    

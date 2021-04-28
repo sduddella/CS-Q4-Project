@@ -3,16 +3,17 @@
 
 import java.util.Random;
 
+/**this is the parent file for all the ghosts and contains default settings*/
 public class GhostDriver extends Character
 {
 
    /*****************************************************
    * creates a new file for the MAIN ghost driver file
    * startProcess var will control the start of the ghost behavior
-   * @param 
-   *   startX  intial start x distanc 
-   * @param 
-   *   startY  intial start y distance
+   * @param startX  
+   *  intial start x distance 
+   * @param startY  
+   *  intial start y distance
    ******************************************************/
    public GhostDriver(double startX, double startY)
    {
@@ -36,14 +37,10 @@ public class GhostDriver extends Character
    
    /*****************************************************
    * method for setting the direction for ghosts
-   * @param 
-   *   aX   
-   * @param 
-   *   aY
-   * @param
-   *   bX
-   * @param
-   *   bY  
+   * @param aX   
+   * @param aY
+   * @param bX
+   * @param bY  
    ******************************************************/
    private void setDirection(int aX, int aY, int bX, int bY)
    {
