@@ -30,20 +30,20 @@ public class GhostDriver extends Character
    
    }
    
-   /**method for ghosts to eat pacman
-   * @return eatPacMan = alive or not
-   */
-   private boolean eatPacMan(){
+   /**method for ghosts to eat pacman*
+   *  @return private boolean = eatPacMan*/
+   private boolean eatPacMan()
+   {
       return true;
    }
    
    
    /*****************************************************
    * method for setting the direction for ghosts
-   * @param aX   
-   * @param aY
-   * @param bX
-   * @param bY  
+   * @param aX x coordinate 1  
+   * @param aY y coordinate 1
+   * @param bX x coordinate 2
+   * @param bY y coordinate 2
    ******************************************************/
    private void setDirection(int aX, int aY, int bX, int bY)
    {
