@@ -67,11 +67,11 @@ public class PacMan extends Character implements KeyListener
    }
    
    /**method to return x*/
-   public double getX(){}
+   public int getX(){}
    
    
    /**method to return y*/
-   public double getY(){}
+   public int getY(){}
    
    
    /**method to set x*/      
@@ -143,5 +143,9 @@ public class PacMan extends Character implements KeyListener
    /** keyReleased function of KeyListener is overriden */
    @Override
    public void keyReleased(KeyEvent arg0){}
+   
+   /** keyReleased function of KeyListener is overriden */
+   @Override
+   public void keyTyped(KeyEvent arg0){}
    
 } 		

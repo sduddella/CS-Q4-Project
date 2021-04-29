@@ -82,10 +82,10 @@ public class Character extends JPanel
   public void setPacLoc(double X, double Y){}
   
   /** get pacman x coordinate */
-  public double getPacX(){}
+  public int getPacX(){}
   
   /** get pacman y coordinate */ 
-  public double getPacY(){}
+  public int getPacY(){}
   
   /* set starting point
   * @param d

@@ -25,10 +25,9 @@ public class GhostDriver extends Character
    /**method to move the pacman, but if it is eating, restart board*/
    public void move()
    {
-      Random.move();
+      //move ghost
       //if pac man is eaten, restart board and set startProcess to false
    
-   repaint();
    }
    
    /**method for ghosts to eat pacman*/

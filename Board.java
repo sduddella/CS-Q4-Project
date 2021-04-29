@@ -84,30 +84,42 @@ public class Board extends JPanel {
    /** This method draws the background of the maze 
    * @return JPanel = background 
    */
-   private JPanel drawBackground(){}
+   private JPanel drawBackground(){
+      return null;
+   }
    
    /** Function that returns a new pacman in position
    * @return Pacman = initial position
    */
-   public PacMan position(){}
+   public PacMan position(){
+      return null;
+   }
 
    /** function that ghosts ghosts in position
    * @param pos
    *  provides expected location of Ghosts
    * @return Ghost = inital Ghost position 
    */
-   public GhostDriver ghostPos(int pos){}
+   public GhostDriver ghostPos(int pos){
+      return null;
+   }
    
    /** Constructor - map width
    * @return mapWidth */
-   public int getMapWidth(){}
+   public int getMapWidth(){
+      return 1;
+   }
    
    /** Constructor - map height
    * @return mapHeight */
-   public int getMapHeight(){}
+   public int getMapHeight(){
+      return 1;
+   }
    
    /** Constructor - toString */
-   public String toString(){}
+   public String toString(){
+      return "";
+   }
    
    /** function that adds food to main board 
    * @param comp
@@ -124,7 +136,9 @@ public class Board extends JPanel {
    *  second index on board position
    * @return board[i][j] is not a wall
    */
-   public boolean isClear(int i, int j){}
+   public boolean isClear(int i, int j){
+      return true;
+   }
    
    /** method to eat food
    * @param i
