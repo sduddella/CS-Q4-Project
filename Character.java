@@ -82,7 +82,7 @@ public class Character extends JPanel
   *  @return private boolean = outOfRange*/
   private boolean outOfRange()
   {
-      return null;
+      return true;
   }
 				
   /**check position of character relative to borders*
@@ -99,14 +99,14 @@ public class Character extends JPanel
   * @return public double = getPacX*/
   public int getPacX()
   {
-      return null;
+      return 1;
   }
   
   /** get pacman y coordinate *
   * @return public double = getPacY*/ 
   public int getPacY()
   {
-      return null;
+      return 1;
   }
   
   /* set starting point

@@ -25,7 +25,8 @@ public class PacMan extends Character implements KeyListener
     ******************************************************/
     
    public PacMan(double startX, double startY)
-   {     
+   {  
+      super(startX, startY);   
       //set super to the parameters startX, startY
       //set the pac man to visible
       //add a key listener
