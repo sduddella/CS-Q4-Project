@@ -1,4 +1,4 @@
-//mahiyah muthu, demi tudorache, and siri duddella
+//mahiyah muthu, demi tudorache
 //4.25.21
 
 /****************************************

@@ -37,4 +37,3 @@ public class PinkGhost extends GhostDriver
    //start the timer
    
 }
-   

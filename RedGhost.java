@@ -26,7 +26,7 @@ public class RedGhost extends GhostDriver
    {      
       super(startX, startY);
       
-      //retrieve blue ghost image from file directory
+      //retrieve red ghost image from file directory
       
       //set a new timer to enable the ghosts to start 10 seconds after pac man launches
       
