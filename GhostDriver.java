@@ -40,10 +40,14 @@ public class GhostDriver extends Character
    
    /*****************************************************
    * method for setting the direction for ghosts
-   * @param aX   
+   * @param aX
+   *  sets start direction x value   
    * @param aY
+   *  sets start direction y value
    * @param bX
+   *  sets end direction x value
    * @param bY  
+   *  sets end direction y value
    ******************************************************/
    private void setDirection(int aX, int aY, int bX, int bY)
    {
