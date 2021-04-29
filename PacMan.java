@@ -67,12 +67,20 @@ public class PacMan extends Character implements KeyListener
       //move y = 0
    }
    
-   /**method to return x*/
-   public int getX(){}
+   /**method to return x*
+   * @return public int = getX*/
+   public int getX()
+   {
+      return 1;
+   }
    
    
-   /**method to return y*/
-   public int getY(){}
+   /**method to return y*
+   * @return public int = getX*/
+   public int getY()
+   {
+      return 1;
+   }
    
    
    /**method to set x*/      
@@ -114,20 +122,36 @@ public class PacMan extends Character implements KeyListener
       
    }
    
-   /**method to get the image of pacman facing left*/
-	public ImageIcon leftIcone(){} 
+   /**method to get the image of pacman facing left*
+   * @return ImageIcon = leftIcon*/
+	public ImageIcon leftIcone()
+   {
+      return null;
+   } 
    
    
-   /**method to get the image of pacman facing right*/
-	public ImageIcon rightIcone(){} 
+   /**method to get the image of pacman facing right*
+   * @return ImageIcon = rightIcon*/
+	public ImageIcon rightIcone()
+   {
+      return null; 
+   } 
   
    
-   /**method to get the image of pacman facing up*/
-	public ImageIcon upIcone(){} 
+   /**method to get the image of pacman facing up*
+   * @return ImageIcon = upIcon*/
+	public ImageIcon upIcone()
+   {
+      return null;   
+   } 
    
    
-   /**method to get the image of pacman facing down*/
-	public ImageIcon downIcone(){}
+   /**method to get the image of pacman facing down*
+   * @return ImageIcon = downIcon*/
+	public ImageIcon downIcone()
+   {
+      return null;
+   }
    
    
    /**method to make pacman facing the starting point
@@ -150,3 +174,5 @@ public class PacMan extends Character implements KeyListener
    public void keyTyped(KeyEvent arg0){}
    
 } 		
+
+
