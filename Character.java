@@ -85,14 +85,23 @@ public class Character extends JPanel
       return true;
   }
 				
-  /**check position of character relative to borders*
+  /**check position of character relative to borders
+  * @param Xi
+  *   x value
+  * @param y
+  *   y value
   * @return private boolean = warmAll*/
   private boolean warmAll(double Xi, double Yi)
   {
       return true;
   }
   
-  /** set default location of pacman */	
+  /** set default location of pacman
+  * @param X
+  *   x value
+  * @param y
+  *   y value
+  */	
   public void setPacLoc(double X, double Y){}
   
   /** get pacman x coordinate *

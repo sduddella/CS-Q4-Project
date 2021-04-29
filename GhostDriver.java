@@ -30,8 +30,12 @@ public class GhostDriver extends Character
    
    }
    
-   /**method for ghosts to eat pacman*/
-   private boolean eatPacMan(){}
+   /**method for ghosts to eat pacman
+   * @return eatPacMan = alive or not
+   */
+   private boolean eatPacMan(){
+      return true;
+   }
    
    
    /*****************************************************
