@@ -60,9 +60,15 @@ public class Character extends JPanel
   */
   public void paint(Graphics g){}
 
-  /**creates null icon if needed*/
-  protected ImageIcon leftIcon(){}
+  
+  /**creates null icon if needed*
+  * @return ImageIcon = leftIcon*/
+  protected ImageIcon leftIcon()
+  {
+      return null;
+  }
 		
+  
   /**sets up board with characters
   * @param b
   *   takes in board that we are currently working on as an object
@@ -72,20 +78,36 @@ public class Character extends JPanel
   /**sets default move functionality*/ 	
   public void move(){}
 
-  /**identifies if characters are going out of the board range*/
-  private boolean outOfRange(){}
+  /**identifies if characters are going out of the board range*
+  *  @return private boolean = outOfRange*/
+  private boolean outOfRange()
+  {
+      return null;
+  }
 				
-  /**check position of character relative to borders*/
-  private boolean warmAll(double Xi, double Yi){}
+  /**check position of character relative to borders*
+  * @return private boolean = warmAll*/
+  private boolean warmAll(double Xi, double Yi)
+  {
+      return true;
+  }
   
   /** set default location of pacman */	
   public void setPacLoc(double X, double Y){}
   
-  /** get pacman x coordinate */
-  public double getPacX(){}
+  /** get pacman x coordinate *
+  * @return public double = getPacX*/
+  public double getPacX()
+  {
+      return null;
+  }
   
-  /** get pacman y coordinate */ 
-  public double getPacY(){}
+  /** get pacman y coordinate *
+  * @return public double = getPacY*/ 
+  public double getPacY()
+  {
+      return null;
+  }
   
   /* set starting point
   * @param d
@@ -102,4 +124,3 @@ public class Character extends JPanel
   public void startTimer(){}
    
 }
-
