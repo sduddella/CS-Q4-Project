@@ -24,7 +24,21 @@ public class Driver extends JFrame{
    *@throws IOException
    *  declares exception
    */
-   public Driver() throws IOException{}
+   public Driver() throws IOException{
+   
+      super("PacMan");
+      JPanel main = new JPanel();
+      main.setLayout(new BoxLayout(main, BoxLayout.LINE_AXIS));
+      this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+      gameBoard = new Board(this);
+      gameBoard.setAlignmentX(LEFT_ALIGNMENT);
+      main.add(gameBoard);
+      main.setSize(450, 420);
+      this.add(main,0);
+      this.setSize(new Dimension(440,480));
+      this.setVisible(true);
+         
+   }
    
    /**
    *Main function that creates new board
@@ -33,5 +47,9 @@ public class Driver extends JFrame{
    *@throws Throwable
    *  declares Throwable exception
    */
-   public static void main(String args[]) throws Throwable{}
+   public static void main(String args[]) throws Throwable{
+   
+      new Driver();
+   
+   }
 }
