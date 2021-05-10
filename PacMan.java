@@ -26,7 +26,8 @@ public class PacMan extends Character implements KeyListener
     
    public PacMan(double startX, double startY)
    {  
-      super(startX, startY);   
+      super(startX, startY); 
+      setPacLoc(startX,startY);  
 		this.setVisible(true);
 		this.addKeyListener(this);
 		this.setFocusable(true);
@@ -48,6 +49,7 @@ public class PacMan extends Character implements KeyListener
    public void move()
    {
       super.move();
+      setPacLoc(this.x,this.y);
 		repaint(); 
    }
    
@@ -55,33 +57,33 @@ public class PacMan extends Character implements KeyListener
    /**method to move pacman up*/
    public void setMoveUp()
    {
-      moveX = 0; 
-      moveY = -1;
+      pacX = 0; 
+      pacY = -1;
    }
    
    /**method to move pacman down*/
    public void setMoveDown()
    {
-      moveX = 0; 
-      moveY = 1;
+      pacX = 0; 
+      pacY = 1;
    }
    
    /**method to move pacman right*/
    public void setMoveRight()
    {
-      moveX = 1; 
-      moveY = 0;   
+      pacX = 1; 
+      pacY = 0;   
    }
    
    /**method to move pacman left*/
    public void setMoveLeft()
    {
-      moveX = -1; 
-      moveY = 0;   }
+      pacX = -1; 
+      pacY = 0;   }
    
    /**method to return x*
    * @return public int = getX*/
-   public int getX()
+   public double getXInd()
    {
       return this.x;
    }
@@ -89,7 +91,7 @@ public class PacMan extends Character implements KeyListener
    
    /**method to return y*
    * @return public int = getX*/
-   public int getY()
+   public double getYInd()
    {
       return this.y;
    }
@@ -110,8 +112,8 @@ public class PacMan extends Character implements KeyListener
    /**method to set intial x and y directions of pacman at 0*/
    public void zeroMoveXY()
    {
-		this.moveX = 0; //(initial direction of pacman) 
-		this.moveY = 0; //(inital direction of pacman)
+		this.pacX = 0; //(initial direction of pacman) 
+		this.pacY = 0; //(inital direction of pacman)
    }
    
    /** method that programs keyboard functionality
