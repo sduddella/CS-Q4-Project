@@ -32,7 +32,7 @@ public class PacMan extends Character implements KeyListener
 		this.setFocusable(true);
 		this.requestFocus(true);
 		
-		timer = new Timer(16, new ActionListener()) 
+		timer = new Timer(16, new ActionListener() 
       {
 			public void actionPerformed(ActionEvent a) 
          {
