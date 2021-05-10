@@ -52,13 +52,22 @@ public class Character extends JPanel
   * @param startY
   *   defines the y coordinate of starting point
   */
-  public Character(double startX, double startY){}
+  public Character(double startX, double startY)
+  {
+      
+   	moveX = 0;
+   	moveY = 0;
+   	this.x = startX;
+   	this.y = startY;
+   	this.image = leftIcone();
+  }
 
-  /** method that paints icons to maze 
-  * @param g
-  *   graphics object used to pian icons
-  */
-  public void paint(Graphics g){}
+         
+  public void paint(Graphics g)
+  {
+      super.paint(g);
+		image.paintIcon(this, g, (int) x, (int) y);  
+  }
 
   
   /**creates null icon if needed*
@@ -73,10 +82,16 @@ public class Character extends JPanel
   * @param b
   *   takes in board that we are currently working on as an object
   */
-  public void setBoard(Board b){}
+  public void setBoard(Board b)
+  {
+      board = b;
+  }
 	
   /**sets default move functionality*/ 	
-  public void move(){}
+  public void move()
+  {
+      
+  }
 
   /**identifies if characters are going out of the board range*
   *  @return private boolean = outOfRange*/
@@ -93,20 +108,24 @@ public class Character extends JPanel
   }
   
   /** set default location of pacman */	
-  public void setPacLoc(double X, double Y){}
+  public void setPacLoc(double X, double Y)
+  {
+      pacX = X;
+      pacY = Y;
+  }
   
   /** get pacman x coordinate *
   * @return public double = getPacX*/
   public int getPacX()
   {
-      return 1;
+      return pacX;
   }
   
   /** get pacman y coordinate *
   * @return public double = getPacY*/ 
   public int getPacY()
   {
-      return 1;
+      return pacX;
   }
   
   /* set starting point
@@ -115,12 +134,24 @@ public class Character extends JPanel
   * @param e
   *   y coordinate value
   */
-  public void startingPoint(double d, double e){}
+  public void startingPoint(double d, double e)
+  {
+      this.x = d;
+		this.y = e;
+		this.moveX = 0;
+		this.moveY = 0;
+  }
   
   /** method stops Timer */ 
-  public void stopTimer(){}
+  public void stopTimer()
+  {
+      timer.stop();
+  }
   
   /** method starts Timer*/
-  public void startTimer(){}
+  public void startTimer()
+  {
+      timer.restart();
+  }
    
 }
