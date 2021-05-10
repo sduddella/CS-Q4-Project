@@ -29,7 +29,7 @@ public class PinkGhost extends GhostDriver
       image = new ImageIcon(getClass().getClassLoader().getResource("img/" + "PacManBlueRight"));
 
       //set a new timer to enable the ghosts to start 15 seconds after pac man launches
-      timer = new Timer(15, new ActionListener())
+      timer = new Timer(15, new ActionListener()
       {
          public void actionPerformed(ActionEvent a)
          {
@@ -39,7 +39,7 @@ public class PinkGhost extends GhostDriver
 					move();
             }
          }
-      };
+      });
 
       //parameters for timer is action event (method used will allow ghost to sync with timer)
       
