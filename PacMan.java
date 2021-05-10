@@ -27,51 +27,63 @@ public class PacMan extends Character implements KeyListener
    public PacMan(double startX, double startY)
    {  
       super(startX, startY);   
-      //set super to the parameters startX, startY
-      //set the pac man to visible
-      //add a key listener
-      //set the pacman object to focus (maybe focusable and requestfocus)
-      //set timer
-      //(method used will allow ghost to sync with timer)
+		this.setVisible(true);
+		this.addKeyListener(this);
+		this.setFocusable(true);
+		this.requestFocus(true);
+		
+		timer = new Timer(16, new ActionListener()) 
+      {
+			public void actionPerformed(ActionEvent a) 
+         {
+				if (a.getSource() == timer)
+					move();
+			}
+		});
+
+		timer.start();
    }   
       
    /** method to move pacman and repaint*/
-   public void move(){}
+   public void move()
+   {
+      super.move();
+		repaint(); 
+   }
    
    
    /**method to move pacman up*/
    public void setMoveUp()
    {
-      //move x = 0
-      //move y = -1
+      moveX = 0; 
+      moveY = -1;
    }
    
    /**method to move pacman down*/
    public void setMoveDown()
    {
-      //move x = 0
-      //move y = 1
+      moveX = 0; 
+      moveY = 1;
    }
    
    /**method to move pacman right*/
    public void setMoveRight()
    {
-      //move x = 1
-      //move y = 0
+      moveX = 1; 
+      moveY = 0;   
    }
    
    /**method to move pacman left*/
    public void setMoveLeft()
    {
-      //move x = -1
-      //move y = 0
-   }
+      moveX = -1; 
+      moveY = 0;   }
    
    /**method to return x*
    * @return public int = getX*/
    public int getX()
    {
-      return 1;
+      return this.x;
    }
    
    
@@ -79,27 +91,27 @@ public class PacMan extends Character implements KeyListener
    * @return public int = getX*/
    public int getY()
    {
-      return 1;
+      return this.y;
    }
    
    
    /**method to set x*/      
    public void setX()
    {
-      // x = x
+      this.x = x;
    }
    
    /**method to set y*/
    public void setY()
    {
-      // y = y
+      this.y = y;
    }
    
    /**method to set intial x and y directions of pacman at 0*/
    public void zeroMoveXY()
    {
-		//set move x = 0 (initial direction of pacman 
-		//set move y = 0 (inital direction of pacman)
+		this.moveX = 0; //(initial direction of pacman) 
+		this.moveY = 0; //(inital direction of pacman)
    }
    
    /** method that programs keyboard functionality
@@ -108,17 +120,29 @@ public class PacMan extends Character implements KeyListener
    */
    public void keyPressed(KeyEvent e) 
    {
-		// if code == left
-      // move left
-	  
-		//if code == right
-      // move right
+		if (e.getKeyCode() == KeyEvent.VK_LEFT)
+      {
+			image = leftIcone();
+			setMoveLeft();
+		}
       
-		//if code == up
-      // move up 
-		
-		//if code == down
-      //move down	   
+		if (e.getKeyCode() == KeyEvent.VK_RIGHT)
+      {
+			image = rightIcone();
+			setMoveRight();
+		}
+      
+		if (e.getKeyCode() == KeyEvent.VK_UP)
+      {
+			image = upIcone();
+			setMoveUp();
+		}
+      
+		if (e.getKeyCode() == KeyEvent.VK_DOWN)
+      {
+			image = downIcone();
+			setMoveDown();
+		}	   
       
    }
    
@@ -126,7 +150,7 @@ public class PacMan extends Character implements KeyListener
    * @return ImageIcon = leftIcon*/
 	public ImageIcon leftIcone()
    {
-      return null;
+      return new ImageIcon(getClass().getClassLoader().getResource("img/"  +"LeftPacMan.png"));
    } 
    
    
@@ -134,7 +158,7 @@ public class PacMan extends Character implements KeyListener
    * @return ImageIcon = rightIcon*/
 	public ImageIcon rightIcone()
    {
-      return null; 
+       return new ImageIcon(getClass().getClassLoader().getResource("img/"  +"RightPacMan.png"));
    } 
   
    
@@ -142,7 +166,7 @@ public class PacMan extends Character implements KeyListener
    * @return ImageIcon = upIcon*/
 	public ImageIcon upIcone()
    {
-      return null;   
+       return new ImageIcon(getClass().getClassLoader().getResource("img/"  +"UpPacMan.png"));
    } 
    
    
@@ -150,7 +174,7 @@ public class PacMan extends Character implements KeyListener
    * @return ImageIcon = downIcon*/
 	public ImageIcon downIcone()
    {
-      return null;
+       return new ImageIcon(getClass().getClassLoader().getResource("img/"  +"DownPacMan.png"));
    }
    
    
@@ -160,9 +184,10 @@ public class PacMan extends Character implements KeyListener
    * @param e
    *  position identifier
    */
-	public void startingPoint(double d, double e) 
+	public void startingPoint(double x, double y) 
    {
-      //set the pac man to facing left (it's the starting point)
+      image = leftIcone();
+		super.startingPoint(x, y); //(it's the starting point)
    }
    
    /** keyReleased function of KeyListener is overriden */
