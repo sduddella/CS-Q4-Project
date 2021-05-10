@@ -22,7 +22,7 @@ public class Board extends JPanel {
    /** creates a serialized object to keep track of users */
    private static final long serialVersionUID = 1L; 
    
-   /** creates an object of PacMan named "pacman" */
+   /** creates an object of PacMan pacmanGamed "pacman" */
    private PacMan pacman;
    
    /** instantiates Driver object game */
@@ -46,7 +46,7 @@ public class Board extends JPanel {
    /** tracks score */
    int score;
    
-   /** status bar panel */
+   /** status pacmanGame panel */
    JPanel panel;
    
    /** game label */
@@ -65,7 +65,40 @@ public class Board extends JPanel {
    final int E=3;
    
    /** array that sets up board */
-   private int board[][];
+   private int board[][] = {
+			{W,W,W,W,W,W,W,W,W,W,W,W,W,W,W,W,W,W,W,W,W,W,W,W,W,W,W,W},
+			{W,F,F,F,F,F,F,F,F,F,F,F,F,W,W,F,F,F,F,F,F,F,F,F,F,F,F,W},
+			{W,F,W,W,W,W,F,W,W,W,W,W,F,W,W,F,W,W,W,W,W,F,W,W,W,W,F,W},
+			{W,F,W,W,W,W,F,W,W,W,W,W,F,W,W,F,W,W,W,W,W,F,W,W,W,W,F,W},
+			{W,F,W,W,W,W,F,W,W,W,W,W,F,W,W,F,W,W,W,W,W,F,W,W,W,W,F,W},
+			{W,F,F,F,F,F,F,F,F,F,F,F,F,F,F,F,F,F,F,F,F,F,F,F,F,F,F,W},
+			{W,F,W,W,W,W,F,W,W,F,W,W,W,W,W,W,W,W,F,W,W,F,W,W,W,W,F,W},
+			{W,F,W,W,W,W,F,W,W,F,W,W,W,W,W,W,W,W,F,W,W,F,W,W,W,W,F,W},
+			{W,F,F,F,F,F,F,W,W,F,F,F,F,W,W,F,F,F,F,W,W,F,F,F,F,F,F,W},
+			{W,W,W,W,W,W,F,W,W,W,W,W,F,W,W,F,W,W,W,W,W,F,W,W,W,W,W,W},
+			{E,E,E,E,E,W,F,W,W,W,W,W,F,W,W,F,W,W,W,W,W,F,W,E,E,E,E,E},
+			{E,E,E,E,E,W,F,W,W,F,F,F,F,F,F,F,F,F,F,W,W,F,W,E,E,E,E,E},
+			{E,E,E,E,E,W,F,W,W,F,W,W,W,W,W,W,W,W,F,W,W,F,W,E,E,E,E,E},
+			{W,W,W,W,W,W,F,W,W,F,W,E,E,E,E,E,E,W,F,W,W,F,W,W,W,W,W,W},
+			{F,F,F,F,F,F,F,F,F,F,W,E,E,E,E,E,E,W,F,F,F,F,F,F,F,F,F,F},
+			{W,W,W,W,W,W,F,W,W,F,W,E,E,E,E,E,E,W,F,W,W,F,W,W,W,W,W,W},
+			{E,E,E,E,E,W,F,W,W,F,W,W,W,W,W,W,W,W,F,W,W,F,W,E,E,E,E,E},
+			{E,E,E,E,E,W,F,W,W,F,F,F,F,F,F,F,F,F,F,W,W,F,W,E,E,E,E,E},
+			{E,E,E,E,E,W,F,W,W,F,W,W,W,W,W,W,W,W,F,W,W,F,W,E,E,E,E,E},
+			{W,W,W,W,W,W,F,W,W,F,W,W,W,W,W,W,W,W,F,W,W,F,W,W,W,W,W,W},
+			{W,F,F,F,F,F,F,F,F,F,F,F,F,W,W,F,F,F,F,F,F,F,F,F,F,F,F,W},
+			{W,F,W,W,W,W,F,W,W,W,W,W,F,W,W,F,W,W,W,W,W,F,W,W,W,W,F,W},
+			{W,F,W,W,W,W,F,W,W,W,W,W,F,W,W,F,W,W,W,W,W,F,W,W,W,W,F,W},
+			{W,F,F,F,W,W,F,F,F,F,F,F,F,F,F,F,F,F,F,F,F,F,W,W,F,F,F,W},
+			{W,W,W,F,W,W,F,W,W,F,W,W,W,W,W,W,W,W,F,W,W,F,W,W,F,W,W,W},
+			{W,W,W,F,W,W,F,W,W,F,W,W,W,W,W,W,W,W,F,W,W,F,W,W,F,W,W,W},
+			{W,F,F,F,F,F,F,W,W,F,F,F,F,W,W,F,F,F,F,W,W,F,F,F,F,F,F,W},
+			{W,F,W,W,W,W,W,W,W,W,W,W,F,W,W,F,W,W,W,W,W,W,W,W,W,W,F,W},
+			{W,F,W,W,W,W,W,W,W,W,W,W,F,W,W,F,W,W,W,W,W,W,W,W,W,W,F,W},
+			{W,F,F,F,F,F,F,F,F,F,F,F,F,F,F,F,F,F,F,F,F,F,F,F,F,F,F,W},
+			{W,W,W,W,W,W,W,W,W,W,W,W,W,W,W,W,W,W,W,W,W,W,W,W,W,W,W,W}
+	};
+
    
    /** This method creates the Pacman maze
    * @throws IOException
@@ -73,19 +106,145 @@ public class Board extends JPanel {
    * @param thisGame
    *  creates Driver object called thisGame
    */
-   public Board(Driver thisGame) throws IOException{}
+   public Board(Driver thisGame) throws IOException{
    
-   /** This method creates a status bar for the game */
-   private void MakeStatusBar(){}
+		game = thisGame;
+		ghosts = new GhostDriver[4];
+		score = 0;
+		lives = 3;
+		setLayout(new BoxLayout(this, BoxLayout.PAGE_AXIS));
+		mapHeight = 416;
+		mapWidth = 429;
+		this.setBackground(Color.black);
+		sqHeight = mapHeight/31;
+		sqWidth = mapWidth/28;
+      
+		// Creates and set-up the layered pane.
+		multiboard = new JLayeredPane();
+		multiboard.setPreferredSize(new Dimension(mapHeight, mapWidth));
+      
+		// Creates the background.
+		JPanel background = drawBackground();
+		background.setBounds(0, 0, mapWidth, mapHeight);
+		multiboard.add(background, new Integer(0));
+      
+		// Creates the items board - Placing food in proper places
+		CreateFood();
+		foodBoard.setOpaque(false);
+		foodBoard.setSize(mapWidth, mapHeight);
+		foodBoard.setBackground(null);
+		multiboard.add(foodBoard,new Integer (1));
+      
+		// Places Pacman on the board.
+		pacman = position();
+		pacman.setOpaque(false);
+		pacman.setSize(mapWidth, mapHeight);
+		multiboard.add(pacman,new Integer(3));
+		pacman.setFocusable(true);
+		pacman.setBoard(this);
+
+		
+		
+		MakeStatusBar();
+		add(panel);
+		
+		ghosts[0]=new RedGhost(12*sqWidth+sqWidth/2,13.5*(sqHeight)+sqHeight/2);
+		ghosts[1]=new BlueGhost(13*sqWidth+sqWidth/2,13.5*(sqHeight)+sqHeight/2);
+		ghosts[2]=new PinkGhost(14*sqWidth+sqWidth/2,13.5*(sqHeight)+sqHeight/2);
+		ghosts[3]=new OrangeGhost(15*sqWidth+sqWidth/2,13.5*(sqHeight)+sqHeight/2);
+		
+		
+		
+		for(int i = 0; i<4;i++){
+			ghosts[i].setOpaque(false);
+			ghosts[i].setSize(mapWidth, mapHeight);
+			multiboard.add(ghosts[i],new Integer(4));
+			ghosts[i].setBoard(this);
+		}
+		
+	
+				
+		multiboard.setVisible(true);
+		
+		this.add(multiboard);
+
+      
+   
+   }
+   
+   /** This method creates a status pacmanGame for the game */
+   private void MakeStatusBar(){
+   
+      try {
+		    pacmanGame = new JLabel("User Name", JLabel.LEFT);
+		    pacmanGame.setBackground(Color.BLUE);
+			 pacmanGame.setText("Your Score is : "+score);
+			 Font f = new Font("Broadway", Font.BOLD, 18);
+		     
+			 pacmanGame.setFont(f);
+   
+			 panel = new JPanel(){
+			 private static final long serialVersionUID = 1L;
+			 private Image pac = ImageIO.read(getClass().getClassLoader().getResource("img/"  +"Heart.png"));
+			 public void paint (Graphics g){
+				 super.paint(g);
+					 for(int i = 0;i<lives;i++)
+						 g.drawImage(pac, 28*i, 1, null);
+					
+			 }
+				
+		    };
+			
+			 panel.setLayout(new FlowLayout()); 
+			 panel.add(pacmanGame);
+		   } catch (IOException e) {
+			   e.printStackTrace();
+		   }
+   }
    
    /** This method draws food */
-   private void CreateFood(){}
+   private void CreateFood(){
+   
+      try {
+   			foodBoard = new JPanel(){
+   				private static final long serialVersionUID = 1L;
+   				private Image food =  ImageIO.read(getClass().getClassLoader().getResource("img/"+"NormalPoint.png"));
+   				public void paint (Graphics g){
+   					super.paint(g);
+   					for (int i=0; i<board.length; i++)
+   						for (int j=0; j<board[i].length; j++) {
+   							if(board[i][j]==F)
+   								g.drawImage(food, (int)(j*(sqWidth)+sqWidth/2), (int)(i*(sqHeight)+sqHeight/2), null);
+   						}
+   					
+   				}
+   				
+   			};
+   		} catch (IOException e) {
+   			e.printStackTrace();
+   		}
+   
+   }
    
    /** This method draws the background of the maze 
    * @return JPanel = background 
    */
    private JPanel drawBackground(){
-      return null;
+      try {
+			background = new JPanel(){
+				private static final long serialVersionUID = 1L;
+				private Image map = ImageIO.read(getClass().getClassLoader().getResource("img/"+"Map.bmp"));		
+				public void paint( Graphics g ) { 
+					super.paint(g);
+					g.drawImage(map, 0, 0, null);
+				}
+			};
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		background.setVisible(true);
+		background.setBackground(Color.black);
+		return background;
    }
    
    /** Function that returns a new pacman in position
