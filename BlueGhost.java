@@ -26,11 +26,11 @@ public class BlueGhost extends GhostDriver
    {  
       super(startX, startY);
       
-      //retrieve blue ghost right image from file directory
+      //retrieves blue ghost right image from file directory
       image = new ImageIcon(getClass().getClassLoader().getResource("img/" + "PacManBlueRight"));
       
       //set a new timer to enable the ghosts to start 25 seconds after pac man launches
-      timer = new Timer(27, new ActionListener()
+      timer = new Timer(25, new ActionListener())
       {
          public void actionPerformed(ActionEvent a)
          {
@@ -40,7 +40,7 @@ public class BlueGhost extends GhostDriver
 					move();
             }
          }
-      });
+      };
       
       //parameters for timer is action event (method used will allow ghost to sync with timer)
 
