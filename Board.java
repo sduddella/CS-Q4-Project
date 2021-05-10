@@ -367,13 +367,34 @@ public class Board extends JPanel {
 		}
 		
 		if (lives==0){
-			endGameEvent();
+			endGame();
 		}
    
    }
    
    /** method to end game */
-   private void endGame(){}
+   private void endGame(){
+   
+   stopCharacters();
+		
+		int result = JOptionPane.showConfirmDialog(this, "Start a new game?", "Game Over", JOptionPane.YES_NO_OPTION);
+
+		switch (result){
+		case (0):
+			try {
+				this.removeAll();
+				game.createBoard();				
+			} catch (IOException e) {
+				
+				e.printStackTrace();
+			}
+			break;
+		case (1):
+		System.exit(0);
+		break;
+		}
+   
+   }
    
    /** method to stop characters */
    private void stopCharacters(){
