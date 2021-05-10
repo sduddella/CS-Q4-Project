@@ -251,7 +251,7 @@ public class Board extends JPanel {
    * @return Pacman = initial position
    */
    public PacMan position(){
-      return null;
+      return new PacMan(13*sqWidth+sqWidth/2,22.5*(sqHeight)+sqHeight/2);
    }
 
    /** function that ghosts ghosts in position
@@ -260,24 +260,30 @@ public class Board extends JPanel {
    * @return Ghost = inital Ghost position 
    */
    public GhostDriver ghostPos(int pos){
-      return null;
+      return new GhostDriver(12*sqWidth+sqWidth/2,13.5*(sqHeight)+sqHeight/2);
    }
    
    /** Constructor - map width
    * @return mapWidth */
    public int getMapWidth(){
-      return 1;
+      return mapWidth;
    }
    
    /** Constructor - map height
    * @return mapHeight */
    public int getMapHeight(){
-      return 1;
+      return mapHeight;
    }
    
    /** Constructor - toString */
    public String toString(){
-      return "";
+      String s="";
+		for (int i=0; i<board.length; i++) {
+			for (int j=0; j<board[i].length; j++)
+				s=s+","+board[i][j];
+			s=s+"\n";
+		}
+		return s;
    }
    
    /** function that adds food to main board 
@@ -286,7 +292,9 @@ public class Board extends JPanel {
    * @param num
    *   position
    */
-   public void addFoodToMultiBoard(Component comp, Integer num){}
+   public void addFoodToMultiBoard(Component comp, Integer num){
+      multiboard.add(comp,num);
+   }
    
    /** check if position empty
    * @param i
@@ -296,7 +304,7 @@ public class Board extends JPanel {
    * @return board[i][j] is not a wall
    */
    public boolean isClear(int i, int j){
-      return true;
+      return !(board[i][j]==1);
    }
    
    /** method to eat food
@@ -305,19 +313,77 @@ public class Board extends JPanel {
    * @param j
    *  second index on board position
    */
-   public void eat(int i, int j){}
+   public void eat(int i, int j){
+   
+      if(board[i][j]==2){
+		   board[i][j]=3;
+		   score++;
+		   if(score>1)
+			   pacmanGame.setText("Your Score is : " +score);
+		}
+		
+		if (score==300){
+			winGameEvent();
+		}
+   
+   }
    
    /** method describes winning */
-   private void winGameEvent(){}
+   private void winGameEvent(){
+   
+      stopCharacters();
+		
+		int result = JOptionPane.showConfirmDialog(this, "New game?", "You Won!", JOptionPane.YES_NO_OPTION);
+		
+		switch (result){
+   		case (0):
+   			try {
+   				this.removeAll();
+   				game.createBoard();				
+   			} catch (IOException e) {
+   				
+   				e.printStackTrace();
+   			}
+   			break;
+   		case (1):
+   		System.exit(0);
+   		break;
+		}
+   
+   }
    
    /** method restarts game */
-   private void  restart(){}
+   private void  restart(){
+   
+      lives--;
+	
+		panel.getRootPane().validate();
+		panel.getRootPane().repaint();
+		pacman.startingPoint(13*sqWidth+sqWidth/2,22.5*(sqHeight)+sqHeight/2);
+		for(int i=0; i <4;i++){
+			ghosts[i].startingPoint((12+i)*sqWidth+sqWidth/2,13.5*(sqHeight)+sqHeight/2);
+			ghosts[i].rounds=0;
+			ghosts[i].startProcess=false;
+		}
+		
+		if (lives==0){
+			endGameEvent();
+		}
+   
+   }
    
    /** method to end game */
    private void endGame(){}
    
    /** method to stop characters */
-   private void stopCharacters(){}
+   private void stopCharacters(){
+   
+      pacman.stopTimer();
+   		for(int i =0;i<4;i++){
+   			ghosts[i].stopTimer();
+   		}
+   
+   }
    
    
 }
