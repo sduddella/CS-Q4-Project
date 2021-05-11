@@ -10,15 +10,15 @@ public class GhostDriver extends Character
    /*****************************************************
    * creates a new file for the MAIN ghost driver file
    * startProcess var will control the start of the ghost behavior
-   * @param startX  
+   * @param moveX  
    *  intial start x distance 
-   * @param startY  
+   * @param moveY  
    *  intial start y distance
    ******************************************************/
    public boolean startProcess; 
-   public GhostDriver(double startX, double startY)
+   public GhostDriver(double moveX, double moveY)
    {
-      super(startX, startY);
+      super(moveX, moveY);
       //set startProcess to false (maybe block also)
       block=false;
 		startProcess=false;
@@ -61,22 +61,26 @@ public class GhostDriver extends Character
          //turn left 
       if (aX<bX)
       {
-			startX=-1; startY=0;
+			moveX=-1; 
+         moveY=0;
 		}
 		//turn right
 		if (aX>bX)
       {
-			startX=1; startY=0;
+			moveX=1; 
+         moveY=0;
 		}
 		//turn down
 		if (aY<bY)
       {
-			startX=0; startY=1;
+			moveX=0; 
+         moveY=1;
 		}
 		//turn up
 		if (aY>bY)
       {
-			startX=0; startY=-1;
+			moveX=0; 
+         moveY=-1;
 		}
 			
 		super.move();   
@@ -91,9 +95,9 @@ public class GhostDriver extends Character
      if (!startProcess)
      {
 			if (!startProcess){
-			deltaX=0; deltaY=-1;
-			this.x=x+deltaX;
-			this.y=y+deltaY;
+			moveX=0; moveY=-1;
+			this.x=x+moveX;
+			this.y=y+moveY;
 			if(this.y==140){
 				startProcess=true;
 			}
@@ -114,16 +118,16 @@ public class GhostDriver extends Character
 			switch(i)
          {
 			case 0:
-				startX=0; startY=-1;
+				moveX=0; moveY=-1;
 				break;
 			case 1:
-				startX=0; startY=1;
+				moveX=0; moveY=1;
 				  break;
 			case 2:
-				startX=-1; startY=0;
+				moveX=-1; moveY=0;
 				  break;
 			case 3:
-				startX=1; startY=0;
+				moveX=1; moveY=0;
 				  break;
 
 			}

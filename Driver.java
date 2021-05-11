@@ -19,14 +19,19 @@ public class Driver extends JFrame{
    /** creates an object of the Board class called gameBoard */
    private Board gameBoard;
    
+   /**Driver*/
+   public Driver() throws IOException{
+      super("PacMan");
+      createBoard();
+   }
+   
    /** 
    *This constructor is responsible for creating the board
    *@throws IOException
    *  declares exception
    */
-   public Driver() throws IOException{
+   public void createBoard() throws IOException{
    
-      super("PacMan");
       JPanel main = new JPanel();
       main.setLayout(new BoxLayout(main, BoxLayout.LINE_AXIS));
       this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

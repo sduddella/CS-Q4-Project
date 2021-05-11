@@ -26,7 +26,7 @@ public class OrangeGhost extends GhostDriver
       super(startX, startY);
       
       //retrieve orange ghost right image from file directory
-      image = new ImageIcon(getClass().getClassLoader().getResource("img/" + "PacManBlueRight"));
+      image = new ImageIcon(getClass().getResource("img/" +"OrangeRight.png"));
 
       //set a new timer to enable the ghosts to start 20 seconds after pac man launches
       timer = new Timer(20, new ActionListener()

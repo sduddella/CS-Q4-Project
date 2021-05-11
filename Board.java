@@ -353,7 +353,7 @@ public class Board extends JPanel {
    }
    
    /** method restarts game */
-   public void  restart(){
+   public void restart(){
    
       lives--;
 	
