@@ -160,7 +160,7 @@ public class PacMan extends Character implements KeyListener
    * @return ImageIcon = rightIcon*/
 	public ImageIcon rightIcone()
    {
-       return new ImageIcon(getClass().getClassLoader().getResource("img/"  +"PacmanRight.png"));
+       return new ImageIcon(getClass().getClassLoader().getResource("img/" +"PacmanRight.png"));
    } 
   
    
@@ -168,7 +168,7 @@ public class PacMan extends Character implements KeyListener
    * @return ImageIcon = upIcon*/
 	public ImageIcon upIcone()
    {
-       return new ImageIcon(getClass().getClassLoader().getResource("img/"  +"PacmanUp.png"));
+       return new ImageIcon(getClass().getClassLoader().getResource("img/" +"PacmanUp.png"));
    } 
    
    
@@ -176,7 +176,7 @@ public class PacMan extends Character implements KeyListener
    * @return ImageIcon = downIcon*/
 	public ImageIcon downIcone()
    {
-       return new ImageIcon(getClass().getClassLoader().getResource("img/"  +"PacmanDown.png"));
+       return new  ImageIcon(getClass().getClassLoader().getResource("img/" +"PacmanDown.png"));
    }
    
    

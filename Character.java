@@ -66,7 +66,7 @@ public class Character extends JPanel
 
    	this.x = startX;
    	this.y = startY;
-   	this.image = leftIcon();
+   	this.image = leftIcone();
   }
 
          
@@ -78,8 +78,8 @@ public class Character extends JPanel
 
   
   /**creates null icon if needed*
-  * @return ImageIcon = leftIcon*/
-  protected ImageIcon leftIcon()
+  * @return ImageIcon = null*/
+  protected ImageIcon leftIcone()
   {
       return null;
   }

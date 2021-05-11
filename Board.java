@@ -375,7 +375,7 @@ public class Board extends JPanel {
    /** method to end game */
    private void endGame(){
    
-   stopCharacters();
+      stopCharacters();
 		
 		int result = JOptionPane.showConfirmDialog(this, "Start a new game?", "Game Over", JOptionPane.YES_NO_OPTION);
 
