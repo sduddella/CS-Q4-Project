@@ -43,6 +43,9 @@ public class Character extends JPanel
    /**creates a double var pacY*/
 	static double pacY;
    
+   /**checks if blocked*/
+   public boolean block;
+   
    /**creates a protected timer method*/
 	protected Timer timer;
    
@@ -55,11 +58,11 @@ public class Character extends JPanel
   public Character(double startX, double startY)
   {
       
-   	moveX = 0;
-   	moveY = 0;
+   	pacX = 0;
+   	pacY = 0;
    	this.x = startX;
    	this.y = startY;
-   	this.image = leftIcone();
+   	this.image = leftIcon();
   }
 
          
@@ -116,14 +119,14 @@ public class Character extends JPanel
   
   /** get pacman x coordinate *
   * @return public double = getPacX*/
-  public int getPacX()
+  public double getPacXCoord()
   {
       return pacX;
   }
   
   /** get pacman y coordinate *
   * @return public double = getPacY*/ 
-  public int getPacY()
+  public double getPacYCoord()
   {
       return pacX;
   }
@@ -138,8 +141,8 @@ public class Character extends JPanel
   {
       this.x = d;
 		this.y = e;
-		this.moveX = 0;
-		this.moveY = 0;
+		this.pacX = 0;
+		this.pacY = 0;
   }
   
   /** method stops Timer */ 

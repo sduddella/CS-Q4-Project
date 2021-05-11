@@ -61,22 +61,22 @@ public class GhostDriver extends Character
          //turn left 
       if (aX<bX)
       {
-			deltaX=-1; deltaY=0;
+			startX=-1; startY=0;
 		}
 		//turn right
 		if (aX>bX)
       {
-			deltaX=1; deltaY=0;
+			startX=1; startY=0;
 		}
 		//turn down
 		if (aY<bY)
       {
-			deltaX=0; deltaY=1;
+			startX=0; startY=1;
 		}
 		//turn up
 		if (aY>bY)
       {
-			deltaX=0; deltaY=-1;
+			startX=0; startY=-1;
 		}
 			
 		super.move();   
@@ -90,9 +90,9 @@ public class GhostDriver extends Character
       //MAKE SURE TO return values
      if (!startProcess)
      {
-			deltaX=0; deltaY=-1;
-			this.x=x+deltaX;
-			this.y=y+deltaY;
+			startX=0; startY=-1;
+			this.x=x+startX;
+			this.y=y+startY;
 			if(this.y==140)
          {
 				startProcess=true;
@@ -113,16 +113,16 @@ public class GhostDriver extends Character
 			switch(i)
          {
 			case 0:
-				deltaX=0; deltaY=-1;
+				startX=0; startY=-1;
 				break;
 			case 1:
-				deltaX=0; deltaY=1;
+				startX=0; startY=1;
 				  break;
 			case 2:
-				deltaX=-1; deltaY=0;
+				startX=-1; startY=0;
 				  break;
 			case 3:
-				deltaX=1; deltaY=0;
+				startX=1; startY=0;
 				  break;
 
 			}
