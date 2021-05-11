@@ -200,4 +200,6 @@ public class PacMan extends Character implements KeyListener
    @Override
    public void keyTyped(KeyEvent arg0){}
    
-} 	
+} 		
+
+
