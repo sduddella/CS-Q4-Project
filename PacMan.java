@@ -152,7 +152,7 @@ public class PacMan extends Character implements KeyListener
    * @return ImageIcon = leftIcon*/
 	public ImageIcon leftIcone()
    {
-      return new ImageIcon(getClass().getClassLoader().getResource("img/"  +"LeftPacMan.png"));
+      return new ImageIcon(getClass().getClassLoader().getResource("img/"  +"PacmanLeft.png"));
    } 
    
    
@@ -160,7 +160,7 @@ public class PacMan extends Character implements KeyListener
    * @return ImageIcon = rightIcon*/
 	public ImageIcon rightIcone()
    {
-       return new ImageIcon(getClass().getClassLoader().getResource("img/"  +"RightPacMan.png"));
+       return new ImageIcon(getClass().getClassLoader().getResource("img/"  +"PacmanRight.png"));
    } 
   
    
@@ -168,7 +168,7 @@ public class PacMan extends Character implements KeyListener
    * @return ImageIcon = upIcon*/
 	public ImageIcon upIcone()
    {
-       return new ImageIcon(getClass().getClassLoader().getResource("img/"  +"UpPacMan.png"));
+       return new ImageIcon(getClass().getClassLoader().getResource("img/"  +"PacmanUp.png"));
    } 
    
    
@@ -176,7 +176,7 @@ public class PacMan extends Character implements KeyListener
    * @return ImageIcon = downIcon*/
 	public ImageIcon downIcone()
    {
-       return new ImageIcon(getClass().getClassLoader().getResource("img/"  +"DownPacMan.png"));
+       return new ImageIcon(getClass().getClassLoader().getResource("img/"  +"PacmanDown.png"));
    }
    
    
@@ -200,6 +200,4 @@ public class PacMan extends Character implements KeyListener
    @Override
    public void keyTyped(KeyEvent arg0){}
    
-} 		
-
-
+} 	
