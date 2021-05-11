@@ -26,7 +26,7 @@ public class PinkGhost extends GhostDriver
       super(startX, startY);
       
       //retrieve pink ghost right image from file directory
-      image = new ImageIcon(getClass().getClassLoader().getResource("img/" + "PacManBlueRight"));
+      image = new ImageIcon(getClass().getClassLoader().getResource("img/" + "PinkRight"));
 
       //set a new timer to enable the ghosts to start 15 seconds after pac man launches
       timer = new Timer(15, new ActionListener()

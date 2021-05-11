@@ -27,7 +27,7 @@ public class RedGhost extends GhostDriver
       super(startX, startY);
       
       //retrieve red ghost image from file directory
-      image =new ImageIcon(getClass().getClassLoader().getResource("img/" +"RedLeft.png"));
+      image = new ImageIcon(getClass().getClassLoader().getResource("img/" + "RedLeft"));
       
       //sets a new timer to enable the ghosts to start 10 seconds after pac man launches
       timer = new Timer(10, new ActionListener()
@@ -48,4 +48,3 @@ public class RedGhost extends GhostDriver
    }
       
 }
-   
