@@ -90,14 +90,15 @@ public class GhostDriver extends Character
       //MAKE SURE TO return values
      if (!startProcess)
      {
-			startX=0; startY=-1;
-			this.x=x+startX;
-			this.y=y+startY;
-			if(this.y==140)
-         {
+			if (!startProcess){
+			deltaX=0; deltaY=-1;
+			this.x=x+deltaX;
+			this.y=y+deltaY;
+			if(this.y==140){
 				startProcess=true;
 			}
-			return;
+				return;
+		}
      }
      if (block)
      {

@@ -23,10 +23,10 @@ public class Character extends JPanel
    protected double y;
    
    /**creates a protected int var startX*/
-	protected int startX;
+	protected int moveX;
    
    /**creates a protected int var startY*/
-	protected int startY;
+	protected int moveY;
    
    /**creates a double var xInt and yInt*/
 	double xInt, yInt;
@@ -37,12 +37,14 @@ public class Character extends JPanel
    /**creates a Board*/
 	Board board;
    
+   boolean flag;
+   
    /**creates a double var pacX*/
 	static double pacX;
    
    /**creates a double var pacY*/
 	static double pacY;
-   
+
    /**checks if blocked*/
    public boolean block;
    
@@ -58,8 +60,10 @@ public class Character extends JPanel
   public Character(double startX, double startY)
   {
       
-   	pacX = 0;
+   	flag = false;
+      pacX = 0;
    	pacY = 0;
+
    	this.x = startX;
    	this.y = startY;
    	this.image = leftIcon();
@@ -88,27 +92,91 @@ public class Character extends JPanel
   public void setBoard(Board b)
   {
       board = b;
+      flag = true;
   }
 	
   /**sets default move functionality*/ 	
   public void move()
   {
-      
+    if (!flag)
+			return;
+
+		int mapHeight = 416;
+		int mapWidth = 429;
+		double squareHeight = mapHeight / 31;
+		double squareWidth = mapWidth / 28;
+		xInt = (this.x + moveX - squareWidth / 2) / squareWidth;
+		yInt = (this.y + moveY - squareHeight / 2) / squareHeight;
+
+		if (outOfRange()) 
+      {
+			return;
+		}
+
+		if (warmAll(xInt, yInt))
+			return;
+
+		if (board.isClear((int) yInt + 1, (int) xInt + 1)) 
+      {
+			this.x = x + moveX;
+			this.y = y + moveY;
+			if (this instanceof PacMan)
+				board.eat((int) yInt + 1, (int) xInt + 1);
+		} 
+      else if (this instanceof GhostDriver) 
+      {
+			block = true;
+		}  
   }
 
   /**identifies if characters are going out of the board range*
   *  @return private boolean = outOfRange*/
   private boolean outOfRange()
   {
-      return true;
+      if (this.x + moveX < 0 && yInt + 1 != 14 && this instanceof GhostDriver) 
+      {
+			moveX = 1;
+		}
+		if (this.y + moveY < 11&& this instanceof GhostDriver) 
+      {
+			Random rnd = new Random();
+			int i = rnd.nextInt(87);
+			i = i % 3;
+			switch (i) 
+         {
+   			case 0:
+   				moveX = 0;
+   				moveY = 1;
+   				break;
+   			case 1:
+   				moveX = 1;
+   				moveY = 0;
+   				break;
+   			case 2:
+   				moveX = -1;
+   				moveY = 0;
+   				break;
+		   }
+		}
+		return false;
   }
 				
   /**check position of character relative to borders*
   * @return private boolean = warmAll*/
-  private boolean warmAll(double Xi, double Yi)
+  private boolean warmAll(double xInt, double yInt)
   {
-      return true;
+      boolean ans = false;
+		if ((int) yInt + 1 == 14 && ((int) xInt + 2 == 0 || xInt + 1 == 28)) 
+      {
+			if (xInt + 1 == 28)
+				this.x = -9;
+			else
+				this.x = 411.5;
+			ans = true;
+		}
+		return ans;
   }
+
   
   /** set default location of pacman */	
   public void setPacLoc(double X, double Y)
