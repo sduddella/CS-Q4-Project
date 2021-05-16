@@ -16,9 +16,9 @@ public class GhostDriver extends Character
    *  intial start y distance
    ******************************************************/
    public boolean startProcess; 
-   public GhostDriver(double moveX, double moveY)
+   public GhostDriver(double startX, double startY)
    {
-      super(moveX, moveY);
+      super(startX, startY);
       //set startProcess to false (maybe block also)
       block=false;
 		startProcess=false;
@@ -44,7 +44,7 @@ public class GhostDriver extends Character
    *  @return private boolean = eatPacMan*/
    private boolean eatPacMan()
    {
-      return true;
+      return Math.sqrt(Math.pow(this.x-pacX, 2)+Math.pow(this.y-pacY,2))<15;
    }
    
    

@@ -57,29 +57,29 @@ public class PacMan extends Character implements KeyListener
    /**method to move pacman up*/
    public void setMoveUp()
    {
-      pacX = 0; 
-      pacY = -1;
+      moveX = 0; 
+      moveY = -1;
    }
    
    /**method to move pacman down*/
    public void setMoveDown()
    {
-      pacX = 0; 
-      pacY = 1;
+      moveX = 0; 
+      moveY = 1;
    }
    
    /**method to move pacman right*/
    public void setMoveRight()
    {
-      pacX = 1; 
-      pacY = 0;   
+      moveX = 1; 
+      moveY = 0;   
    }
    
    /**method to move pacman left*/
    public void setMoveLeft()
    {
-      pacX = -1; 
-      pacY = 0;   }
+      moveX = -1; 
+      moveY = 0;   }
    
    /**method to return x*
    * @return public int = getX*/
@@ -112,8 +112,8 @@ public class PacMan extends Character implements KeyListener
    /**method to set intial x and y directions of pacman at 0*/
    public void zeroMoveXY()
    {
-		this.pacX = 0; //(initial direction of pacman) 
-		this.pacY = 0; //(inital direction of pacman)
+		this.moveX = 0; //(initial direction of pacman) 
+		this.moveY = 0; //(inital direction of pacman)
    }
    
    /** method that programs keyboard functionality

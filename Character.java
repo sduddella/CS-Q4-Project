@@ -61,8 +61,8 @@ public class Character extends JPanel
   {
       
    	flag = false;
-      pacX = 0;
-   	pacY = 0;
+      moveX = 0;
+   	moveY = 0;
 
    	this.x = startX;
    	this.y = startY;
@@ -196,7 +196,7 @@ public class Character extends JPanel
   * @return public double = getPacY*/ 
   public double getPacYCoord()
   {
-      return pacX;
+      return pacY;
   }
   
   /* set starting point
@@ -209,8 +209,8 @@ public class Character extends JPanel
   {
       this.x = d;
 		this.y = e;
-		this.pacX = 0;
-		this.pacY = 0;
+		this.moveX = 0;
+		this.moveY = 0;
   }
   
   /** method stops Timer */ 
