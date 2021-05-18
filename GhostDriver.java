@@ -6,16 +6,17 @@ import java.util.Random;
 /**this is the parent file for all the ghosts and contains default settings*/
 public class GhostDriver extends Character
 {
-
+   /** keeps track of starting processes */
+   public boolean startProcess; 
+   
    /*****************************************************
    * creates a new file for the MAIN ghost driver file
    * startProcess var will control the start of the ghost behavior
-   * @param moveX  
+   * @param startX  
    *  intial start x distance 
-   * @param moveY  
+   * @param startY  
    *  intial start y distance
    ******************************************************/
-   public boolean startProcess; 
    public GhostDriver(double startX, double startY)
    {
       super(startX, startY);

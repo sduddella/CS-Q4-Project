@@ -37,6 +37,7 @@ public class Character extends JPanel
    /**creates a Board*/
 	Board board;
    
+   /**tracks flags*/
    boolean flag;
    
    /**creates a double var pacX*/
