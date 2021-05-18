@@ -19,7 +19,10 @@ public class Driver extends JFrame{
    /** creates an object of the Board class called gameBoard */
    private Board gameBoard;
    
-   /**Driver*/
+   /**Driver
+   * @throws IOException
+   *    declares exception
+   */
    public Driver() throws IOException{
       super("PacMan");
       createBoard();

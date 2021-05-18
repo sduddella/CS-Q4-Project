@@ -162,7 +162,11 @@ public class Character extends JPanel
 		return false;
   }
 				
-  /**check position of character relative to borders*
+  /**check position of character relative to borders *
+  * @param xInt
+  *   x position int
+  * @param yInt
+  *   y position int
   * @return private boolean = warmAll*/
   private boolean warmAll(double xInt, double yInt)
   {
@@ -179,7 +183,11 @@ public class Character extends JPanel
   }
 
   
-  /** set default location of pacman */	
+  /** set default location of pacman *
+  * @param X
+  *   X position
+  * @param Y
+  *   y position*/	
   public void setPacLoc(double X, double Y)
   {
       pacX = X;
@@ -200,12 +208,11 @@ public class Character extends JPanel
       return pacY;
   }
   
-  /* set starting point
+  /** set starting point *
   * @param d
   *   x coordinate value
   * @param e
-  *   y coordinate value
-  */
+  *   y coordinate value*/
   public void startingPoint(double d, double e)
   {
       this.x = d;
