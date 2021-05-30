@@ -1,3 +1,3 @@
-# CS-Q4-Project
+# Java PacMan Project
 
-Hello World
+This is our Computer Science final project for which we used Java Swing to create a Pacman game.
